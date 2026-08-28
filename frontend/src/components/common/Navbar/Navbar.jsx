@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Sidebar from "../Sidebar/Sidebar";
-import fugglerLogo from "../../assets/logos/fuggler-logo.png";
+import fugglerLogo from "../../../assets/logos/fuggler-logo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -65,11 +65,21 @@ export default function Navbar() {
         </a>
 
         <nav className="navbar__desktop">
-          <a href="#home" className="navbar__link">Home</a>
-          <a href="#rooms" className="navbar__link">Rooms</a>
-          <a href="#resturant" className="navbar__link">Resturant</a>
-          <a href="#amenities" className="navbar__link">Amenities</a>
-          <a href="#about" className="navbar__link">About Us</a>
+          <a href="#home" className="navbar__link">
+            Home
+          </a>
+          <a href="#rooms" className="navbar__link">
+            Rooms
+          </a>
+          <a href="#resturant" className="navbar__link">
+            Resturant
+          </a>
+          <a href="#amenities" className="navbar__link">
+            Amenities
+          </a>
+          <a href="#about" className="navbar__link">
+            About Us
+          </a>
         </nav>
 
         <a href="#booking" className="navbar__book-btn">

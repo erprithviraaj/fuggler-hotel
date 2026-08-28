@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import fugglerLogo from "../../../assets/logos/fuggler-logo.png";
 
 export default function Sidebar({ open, onClose }) {
   return (
@@ -15,7 +16,7 @@ export default function Sidebar({ open, onClose }) {
           <a href="#home" className="sidebar__brand" onClick={onClose}>
             <span className="sidebar__brand-box">
               <img
-                src="/src/assets/logos/fuggler-logo.png"
+                src={fugglerLogo}
                 alt="Fuggler Logo"
                 className="sidebar__brand-logo"
               />
