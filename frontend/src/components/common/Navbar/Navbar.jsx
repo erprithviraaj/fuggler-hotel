@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Sidebar from "../Sidebar/Sidebar";
+import fugglerLogo from "../../assets/logos/fuggler-logo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,7 +56,7 @@ export default function Navbar() {
         <a href="#home" className="navbar__logo">
           <span className="navbar__logo-box">
             <img
-              src="/src/assets/logos/fuggler-logo.png"
+              src={fugglerLogo}
               alt="Fuggler Logo"
               className="navbar__logo-img"
             />
