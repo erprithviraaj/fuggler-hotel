@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+
 import fugglerLogo from "../../../assets/logos/fuggler-logo.png";
 
 export default function Sidebar({ open, onClose }) {
