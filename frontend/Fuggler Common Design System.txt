@@ -1,0 +1,207 @@
+Bilkul — neeche main isko clean .txt / notes format me likh raha hoon, taaki aap VS Code me open karke easily read kar sako.
+Is format me headings clear hain, spacing achchi hai, aur future me quickly scan bhi ho jayega.
+
+Fuggler Common Design System — Final List
+========================================
+
+1) Colors
+---------
+Gold Accent: #fbbf24
+Gold Dark: #d97706
+Gold Hover: #f59e0b
+
+Heading Text: #0f172a
+Body Text: #475569
+Strong Body Text: rgba(17, 24, 39, 0.78)
+
+Cream Background: #f6f0e9
+
+White Soft Card: rgba(255, 255, 255, 0.62)
+White Strong Card: rgba(255, 255, 255, 0.82)
+
+Border Light: rgba(15, 23, 42, 0.12)
+
+
+2) Typography
+-------------
+Font Family:
+Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+
+Eyebrow Size (Desktop): 0.78rem
+Eyebrow Size (Mobile): 0.72rem
+
+H2 Size (Desktop): clamp(2rem, 4vw, 2.8rem)
+H2 Size (Mobile): 1.2rem
+
+Body Text (Desktop): 1rem
+Body Text (Mobile): 0.78rem
+
+Small Text (Mobile): 0.72rem
+
+Font Weight Standard: 700
+
+
+3) Section Layout
+-----------------
+Section Padding (Desktop / Tablet): 8px 16px 16px
+Section Padding (Mobile): 8px 16px 16px
+
+Max Width Container: 1450px
+Content Max Width: 820px
+
+Section Header Alignment: Center
+
+Header Margin Bottom (Desktop): 24px
+Header Margin Bottom (Mobile): 16px
+
+
+4) Section Header Pattern
+-------------------------
+Every section should use:
+
+- Eyebrow Text
+- H2 Heading
+- Description Paragraph
+
+
+5) Card System
+--------------
+Card Radius (Desktop): 24px
+Card Radius (Mobile): 18px
+
+Card Background: Semi-transparent white
+Card Border: 1px solid rgba(15, 23, 42, 0.12)
+Card Shadow: Soft medium elevation
+Card Blur: 14px
+
+
+6) Button System
+---------------
+Primary Button: Gold gradient
+Secondary Button: Light white background
+Ghost Button: Transparent / outline
+
+Button Weight: 700
+Desktop Button Height: 44px
+Mobile Button Height: 40px
+
+Button Style: Rounded pill
+
+
+7) Image System
+--------------
+width: 100%
+height: 100%
+object-fit: cover
+display: block
+
+Soft overlay only
+No harsh dark filter
+No unnecessary scale distortions
+
+
+8) Inputs
+--------
+Rounded input fields
+Light border
+Soft focus ring in gold
+Same spacing and height across forms
+
+
+9) Chips / Badges
+---------------
+Rounded pill shape
+Gold-tinted background
+White or dark variant where needed
+white-space: nowrap
+
+
+10) Grid System
+--------------
+Standard reusable grid classes
+2-column, 3-column, 4-column patterns
+Mobile single-column collapse
+Tablet adjusted grid where needed
+
+
+11) Flex Helpers
+---------------
+flex
+flex-col
+align-start
+justify-between
+center
+grow
+mt-auto
+
+
+12) Card Footer Behavior
+-----------------------
+Use flex: 1 on main content
+Use margin-top: auto on footer
+
+Keeps CTA / price aligned at bottom
+Prevents vertical shifting
+
+
+13) Responsive Breakpoints
+-------------------------
+Mobile: max-width 600px
+Tablet: 601px to 900px
+Desktop: 901px and above
+
+
+14) Mobile Rules
+---------------
+Smaller typography
+Smaller padding
+Smaller radius
+Same button alignment
+Same footer lock
+Avoid stacked price/button unless required
+
+
+15) Shared Background
+--------------------
+Soft beige / cream gradient
+Gold radial accent
+Same family across all sections
+
+
+16) Shared Behavior
+-------------------
+Consistent hover lift
+Consistent shadow strength
+Consistent blur strength
+Consistent spacing rhythm
+Consistent CTA styling
+
+
+What Should Always Be Common
+----------------------------
+- Colors
+- Fonts
+- Font sizes
+- Weights
+- Section header style
+- Container width
+- Card radius
+- Card shadow
+- Blur
+- Button styles
+- Input styles
+- Badge styles
+- Image object-fit rules
+- Breakpoints
+- Footer locking behavior
+
+
+What Should Remain Section-Specific
+----------------------------------
+- Hero slideshow
+- Booking form grid
+- Highlight two-column image/stats layout
+- Rooms image gallery slider
+- Offers card content
+- About page layout
+- Restaurant / amenities unique content blocks

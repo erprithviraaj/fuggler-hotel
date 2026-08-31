@@ -1,0 +1,95 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: #000;
+}
+
+
+
+/* :root {
+  --fs-h1: 2rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.75rem;
+  --fs-h4: 1.35rem;
+  --fs-h5: 1.15rem;
+  --fs-h6: 1rem;
+
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --line-tight: 1.15;
+  --line-normal: 1.5;
+  --line-relaxed: 1.7;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--line-tight);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--line-tight);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  line-height: 1.25;
+}
+
+h5 {
+  font-size: var(--fs-h5);
+  line-height: 1.3;
+}
+
+h6 {
+  font-size: var(--fs-h6);
+  line-height: 1.35;
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--line-relaxed);
+}
+
+small {
+  font-size: var(--fs-small);
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: var(--fs-body);
+}
+
+
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 2rem;
+    --fs-h2: 1.7rem;
+    --fs-h3: 1.35rem;
+    --fs-h4: 1.15rem;
+    --fs-h5: 1rem;
+    --fs-h6: 0.92rem;
+
+    --fs-body: 0.92rem;
+    --fs-small: 0.8rem;
+    --line-relaxed: 1.5;
+  }
+}

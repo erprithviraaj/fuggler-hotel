@@ -1,0 +1,235 @@
+.gallery-section {
+  width: 100%;
+  padding: 16px 16px 16px;
+  background:
+    radial-gradient(circle at top, rgba(251, 191, 36, 0.12), transparent 35%),
+    linear-gradient(180deg, #f6f0e9);
+  overflow: hidden;
+}
+
+.gallery-section__container {
+  width: min(100%, 1450px);
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.gallery-section__header {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  text-align: center;
+  min-width: 0;
+}
+
+.gallery-section__eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d97706;
+}
+
+.gallery-section__title {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #0f172a;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.gallery-section__description {
+  margin: 0 auto;
+  max-width: 760px;
+  color: rgba(17, 24, 39, 0.78);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.gallery-marquee {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.gallery-marquee__track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: gallery-scroll 55s linear infinite;
+  will-change: transform;
+}
+
+.gallery-marquee:hover .gallery-marquee__track {
+  animation-play-state: paused;
+}
+
+.gallery-marquee__item {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.gallery-marquee__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.45s ease;
+  user-select: none;
+}
+
+.gallery-marquee__item:hover .gallery-marquee__image {
+  transform: scale(1.06);
+}
+
+.gallery-marquee__overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0) 0%,
+    rgba(17, 24, 39, 0.2) 35%,
+    rgba(17, 24, 39, 0.78) 100%
+  );
+  color: #f6f0e9;
+}
+
+.gallery-marquee__category {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fbbf24;
+}
+
+.gallery-marquee__title {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+@keyframes gallery-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .gallery-section {
+    padding: 16px 16px 16px;
+  }
+
+  .gallery-section__header {
+    margin-bottom: 20px;
+  }
+
+  .gallery-section__eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gallery-section__title {
+    font-size: 1.5rem;
+  }
+
+  .gallery-section__description {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .gallery-marquee__track {
+    gap: 14px;
+    animation-duration: 45s;
+  }
+
+  .gallery-marquee__item {
+    width: 240px;
+    height: 170px;
+    border-radius: 18px;
+  }
+
+  .gallery-marquee__overlay {
+    padding: 12px;
+  }
+
+  .gallery-marquee__title {
+    font-size: 0.8rem;
+  }
+
+  .gallery-marquee__category {
+    font-size: 0.72rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gallery-section {
+    padding: 16px 16px 16px;
+  }
+
+  .gallery-section__header {
+    margin-bottom: 16px;
+  }
+
+  .gallery-section__eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+
+  .gallery-section__title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .gallery-section__description {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  .gallery-marquee__track {
+    gap: 12px;
+    animation-duration: 32s;
+  }
+
+  .gallery-marquee__item {
+    width: 210px;
+    height: 150px;
+    border-radius: 16px;
+  }
+
+  .gallery-marquee__overlay {
+    padding: 12px;
+  }
+
+  .gallery-marquee__title {
+    font-size: 0.78rem;
+  }
+
+  .gallery-marquee__category {
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+}
