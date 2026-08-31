@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
 
-// ADD: Import images properly for Vite production build
 import deluxe1 from "../../../assets/images/rooms/deluxe/01-deluxe-main.jpg";
 import deluxe2 from "../../../assets/images/rooms/deluxe/02-deluxe-bed.jpg";
 import deluxe3 from "../../../assets/images/rooms/deluxe/03-deluxe-window.jpg";
@@ -38,16 +37,7 @@ const rooms = [
     bed: "Queen Bed",
     size: "24 m²",
     price: "₹5,500/night",
-    images: [
-      deluxe1,
-      deluxe2,
-      deluxe3,
-      deluxe4,
-      deluxe5,
-      deluxe6,
-      deluxe7,
-      deluxe8,
-    ],
+    images: [deluxe1, deluxe2, deluxe3, deluxe4, deluxe5, deluxe6, deluxe7, deluxe8],
   },
   {
     title: "Premium Room",
@@ -57,16 +47,7 @@ const rooms = [
     bed: "King Bed",
     size: "28 m²",
     price: "₹6,800/night",
-    images: [
-      premium1,
-      premium2,
-      premium3,
-      premium4,
-      premium5,
-      premium6,
-      premium7,
-      premium8,
-    ],
+    images: [premium1, premium2, premium3, premium4, premium5, premium6, premium7, premium8],
   },
   {
     title: "Executive Suite",
@@ -76,28 +57,15 @@ const rooms = [
     bed: "King Bed",
     size: "40 m²",
     price: "₹8,999/night",
-    images: [
-      executive1,
-      executive2,
-      executive3,
-      executive4,
-      executive5,
-      executive6,
-      executive7,
-      executive8,
-    ],
+    images: [executive1, executive2, executive3, executive4, executive5, executive6, executive7, executive8],
   },
 ];
 
 function RoomCard({ room, index }) {
-  // ADD: active slide state
   const [activeImage, setActiveImage] = useState(0);
-
-  // ADD: touch refs for swipe
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // ADD: auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveImage((prev) => (prev + 1) % room.images.length);
@@ -106,23 +74,17 @@ function RoomCard({ room, index }) {
     return () => clearInterval(interval);
   }, [room.images.length]);
 
-  // ADD: go to specific image
-  const goToImage = (imageIndex) => {
-    setActiveImage(imageIndex);
-  };
+  const goToImage = (imageIndex) => setActiveImage(imageIndex);
 
-  // ADD: swipe start
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
     touchEndX.current = e.touches[0].clientX;
   };
 
-  // ADD: swipe move
   const handleTouchMove = (e) => {
     touchEndX.current = e.touches[0].clientX;
   };
 
-  // ADD: swipe end
   const handleTouchEnd = () => {
     const swipeDistance = touchStartX.current - touchEndX.current;
 
@@ -137,14 +99,12 @@ function RoomCard({ room, index }) {
 
   return (
     <article className="room-card">
-      {/* ADD: image slider container */}
       <div
         className="room-card__image"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* ADD: active image */}
         <img
           src={room.images[activeImage]}
           alt={`${room.title} ${activeImage + 1}`}
@@ -152,40 +112,22 @@ function RoomCard({ room, index }) {
           draggable="false"
         />
 
-        {/* ADD: room badge */}
         <span className="room-card__badge">Room {index + 1}</span>
 
-        {/* ADD: dots navigation only */}
         <div className="room-card__dots" aria-label="Room image navigation">
           {room.images.map((_, dotIndex) => (
             <button
               key={dotIndex}
               type="button"
-              className={`room-card__dot ${dotIndex === activeImage ? "room-card__dot--active" : ""}`}
+              className={`room-card__dot ${
+                dotIndex === activeImage ? "room-card__dot--active" : ""
+              }`}
               onClick={() => goToImage(dotIndex)}
               aria-label={`Go to image ${dotIndex + 1}`}
             />
           ))}
         </div>
       </div>
-
-      {/* <div className="room-card__content">
-        <div className="room-card__text">
-          <h3>{room.title}</h3>
-          <p>{room.description}</p>
-        </div>
-
-        <ul className="room-card__meta">
-          <li>{room.guests} Guests</li>
-          <li>{room.bed}</li>
-          <li>{room.size}</li>
-        </ul>
-
-        <div className="room-card__footer">
-          <strong>{room.price}</strong>
-          <button type="button">View Details</button>
-        </div>
-      </div> */}
 
       <div className="room-card__content">
         <div className="room-card__text">
@@ -211,20 +153,20 @@ function RoomCard({ room, index }) {
 export default function RoomsSection() {
   return (
     <section className="rooms-section" id="rooms">
-      {/* ADD: section header */}
-      <div className="rooms-section__header">
-        <p className="rooms-section__eyebrow">Our Rooms</p>
-        <h2>Rooms Designed for Rest</h2>
-        <p>
-          Thoughtfully designed spaces created for comfort, calm, and effortless stays at Fuggler Hotel.
-        </p>
-      </div>
+      <div className="rooms-section__container">
+        <div className="rooms-section__header">
+          <p className="rooms-section__eyebrow">Our Rooms</p>
+          <h2 className="rooms-section__title">Rooms Designed for Rest</h2>
+          <p className="rooms-section__description">
+            Thoughtfully designed spaces created for comfort, calm, and effortless stays at Fuggler Hotel.
+          </p>
+        </div>
 
-      {/* ADD: rooms grid */}
-      <div className="rooms-section__grid">
-        {rooms.map((room, index) => (
-          <RoomCard room={room} index={index} key={room.title} />
-        ))}
+        <div className="rooms-section__grid">
+          {rooms.map((room, index) => (
+            <RoomCard room={room} index={index} key={room.title} />
+          ))}
+        </div>
       </div>
     </section>
   );

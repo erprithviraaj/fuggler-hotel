@@ -45,27 +45,34 @@ export default function GallerySection() {
   const repeatedItems = [...galleryItems, ...galleryItems];
 
   return (
-    <section className="gallery-section">
-      <div className="gallery-section__header">
-        <p className="gallery-section__eyebrow">Gallery</p>
-        <h2>Explore Fuggler in Frames</h2>
-        <p>
-          Step into the full Fuggler experience through elegant spaces, refined architecture,
-          premium surroundings, and welcoming moments crafted for comfort.
-        </p>
-      </div>
+    <section className="gallery-section" id="gallery">
+      <div className="gallery-section__container">
+        <div className="gallery-section__header">
+          <p className="gallery-section__eyebrow">Gallery</p>
+          <h2 className="gallery-section__title">Explore Fuggler in Frames</h2>
+          <p className="gallery-section__description">
+            Step into the full Fuggler experience through elegant spaces, refined architecture,
+            premium surroundings, and welcoming moments crafted for comfort.
+          </p>
+        </div>
 
-      <div className="gallery-marquee" aria-label="Hotel gallery carousel">
-        <div className="gallery-marquee__track">
-          {repeatedItems.map((item, index) => (
-            <article className="gallery-marquee__item" key={`${item.title}-${index}`}>
-              <img src={item.image} alt={item.title} className="gallery-marquee__image" />
-              <div className="gallery-marquee__overlay">
-                <span className="gallery-marquee__category">{item.category}</span>
-                <h3 className="gallery-marquee__title">{item.title}</h3>
-              </div>
-            </article>
-          ))}
+        <div className="gallery-marquee" aria-label="Hotel gallery carousel">
+          <div className="gallery-marquee__track">
+            {repeatedItems.map((item, index) => (
+              <article className="gallery-marquee__item" key={`${item.title}-${index}`}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="gallery-marquee__image"
+                  draggable="false"
+                />
+                <div className="gallery-marquee__overlay">
+                  <span className="gallery-marquee__category">{item.category}</span>
+                  <h3 className="gallery-marquee__title">{item.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

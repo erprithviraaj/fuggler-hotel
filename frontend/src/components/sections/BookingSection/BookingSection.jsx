@@ -7,8 +7,10 @@ export default function BookingSection() {
       <div className="booking-section__container">
         <div className="booking-section__header">
           <p className="booking-section__eyebrow">Plan Your Stay</p>
-          <h2>Check Availability</h2>
-          <p>Choose your dates and guests to find the perfect room at Fuggler Hotel.</p>
+          <h2 className="booking-section__title">Check Availability</h2>
+          <p className="booking-section__description">
+            Choose your dates and guests to find the perfect room at Fuggler Hotel.
+          </p>
         </div>
 
         <form className="booking-section__form">
@@ -24,11 +26,12 @@ export default function BookingSection() {
 
           <div className="booking-section__field">
             <label htmlFor="guests">Guests</label>
-            <input id="guests" name="guests" type="number" min="1" />
-            {/* <input id="guests" name="guests" type="number" min="1" placeholder="2" /> */}
+            <input id="guests" name="guests" type="number" min="1" placeholder="2" />
           </div>
 
-          <button type="submit">Check Availability</button>
+          <button type="submit" className="booking-section__submit">
+            Check Availability
+          </button>
         </form>
       </div>
     </section>

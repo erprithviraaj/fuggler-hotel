@@ -14,7 +14,6 @@ import heroImage9 from "../../../assets/images/hero/09-hero-executive-suite.jpg"
 import heroImage10 from "../../../assets/images/hero/10-hero-luxury-bathroom.jpg";
 import heroImage11 from "../../../assets/images/hero/11-hero-hotel-garden.jpg";
 import heroImage12 from "../../../assets/images/hero/12-hero-drone-aerial.jpg";
-
 import heroImage13 from "../../../assets/images/hero/13-prasp-inn-drone-city.jpg";
 import heroImage14 from "../../../assets/images/hero/14-prasp-inn-drone-evening.jpg";
 import heroImage15 from "../../../assets/images/hero/15-prasp-inn-drone-front.jpg";
@@ -76,7 +75,7 @@ export default function HeroSection() {
 
   return (
     <section className="hero-section">
-      <div className="hero-section__slideshow">
+      <div className="hero-section__slideshow" aria-hidden="true">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -140,8 +139,12 @@ export default function HeroSection() {
               <div className="hero-section__stats">
                 {heroStats.map((stat, index) => (
                   <div key={index} className="hero-section__stat">
-                    <span className="hero-section__stat-value">{stat.value}</span>
-                    <span className="hero-section__stat-label">{stat.label}</span>
+                    <span className="hero-section__stat-value">
+                      {stat.value}
+                    </span>
+                    <span className="hero-section__stat-label">
+                      {stat.label}
+                    </span>
                   </div>
                 ))}
               </div>

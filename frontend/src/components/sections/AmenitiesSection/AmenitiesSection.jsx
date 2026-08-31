@@ -52,12 +52,12 @@ const iconMap = {
 
 export default function AmenitiesSection() {
   return (
-    <section className="amenities-section">
+    <section className="amenities-section" id="amenities">
       <div className="amenities-section__container">
         <div className="amenities-section__header">
           <p className="amenities-section__eyebrow">Amenities</p>
-          <h2>Everything You Need for a Relaxing Stay</h2>
-          <p>
+          <h2 className="amenities-section__title">Everything You Need for a Relaxing Stay</h2>
+          <p className="amenities-section__description">
             Thoughtful comforts, essential services, and premium conveniences designed to make every
             stay smooth, secure, and comfortable.
           </p>
@@ -67,8 +67,9 @@ export default function AmenitiesSection() {
           {amenities.map((item, index) => (
             <article className="amenity-card" key={`${item.title}-${index}`}>
               <div className="amenity-card__icon">
-                <img src={iconMap[item.icon]} alt={item.title} />
+                <img src={iconMap[item.icon]} alt={item.title} draggable="false" />
               </div>
+
               <div className="amenity-card__body">
                 <h3 className="amenity-card__title">{item.title}</h3>
                 <p className="amenity-card__description">{item.description}</p>

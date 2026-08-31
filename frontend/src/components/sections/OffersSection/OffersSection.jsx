@@ -35,88 +35,38 @@ const offers = [
 export default function OffersSection() {
   return (
     <section className="offers-section" id="offers">
-      <div className="offers-section__header">
-        <p className="offers-section__eyebrow">Special Offers</p>
-        <h2>Exclusive Deals for Your Stay</h2>
-        <p>
-          Discover curated offers that bring together comfort, dining, and better value for every kind of getaway.
-        </p>
-      </div>
+      <div className="offers-section__container">
+        <div className="offers-section__header">
+          <p className="offers-section__eyebrow">Special Offers</p>
+          <h2 className="offers-section__title">Exclusive Deals for Your Stay</h2>
+          <p className="offers-section__description">
+            Discover curated offers that bring together comfort, dining, and better value for every kind of getaway.
+          </p>
+        </div>
 
-      <div className="offers-section__grid">
-        {offers.map((offer, index) => (
-          // <article className="offer-card" key={index}>
-          //   <div className="offer-card__badge">Offer {index + 1}</div>
+        <div className="offers-section__grid">
+          {offers.map((offer, index) => (
+            <article className="offer-card" key={index}>
+              <div className="offer-card__top">
+                <div className="offer-card__badge">Offer {index + 1}</div>
 
-          //   <h3 className="offer-card__title">{offer.title}</h3>
-          //   <p className="offer-card__benefit">{offer.benefit}</p>
-
-          //   <div className="offer-card__meta">
-          //     <span className="offer-card__value">{offer.value}</span>
-          //     <span className="offer-card__validity">{offer.validity}</span>
-          //   </div>
-
-          //   {/* <button type="button" className="offer-card__button">
-          //     {offer.cta}
-          //   </button> */}
-
-          //   <div className="offer-card__bottom">
-          //     <button type="button" className="offer-card__button">
-          //       {offer.cta}
-          //     </button>
-          //   </div>
-          // </article>
-
-          // <article className="offer-card" key={index}>
-          //   <div className="offer-card__top">
-          //     <div className="offer-card__badge">Offer {index + 1}</div>
-
-          //     <h3 className="offer-card__title">{offer.title}</h3>
-          //     <p className="offer-card__benefit">{offer.benefit}</p>
-
-          //     <div className="offer-card__meta">
-          //       <span className="offer-card__value">{offer.value}</span>
-          //       <span className="offer-card__validity">{offer.validity}</span>
-          //     </div>
-          //   </div>
-
-          //   <div className="offer-card__bottom">
-          //     {/* <button type="button" className="offer-card__button">
-          //       {offer.cta}
-          //     </button> */}
-
-          //     <button type="button" className="offer-card__button">
-          //       {offer.cta}
-          //     </button>
-          //   </div>
-          // </article>
-
-          <article className="offer-card" key={index}>
-            <div className="offer-card__top">
-              <div className="offer-card__badge">Offer {index + 1}</div>
-
-              <h3 className="offer-card__title">{offer.title}</h3>
-              <p className="offer-card__benefit">{offer.benefit}</p>
-            </div>
-
-            <div className="offer-card__bottom">
-              <div className="offer-card__meta">
-                <span className="offer-card__value">{offer.value}</span>
-                <span className="offer-card__validity">{offer.validity}</span>
+                <h3 className="offer-card__title">{offer.title}</h3>
+                <p className="offer-card__benefit">{offer.benefit}</p>
               </div>
 
-              {/* <button type="button" className="offer-card__button">
-                {offer.cta}
-              </button> */}
+              <div className="offer-card__bottom">
+                <div className="offer-card__meta">
+                  <span className="offer-card__value">{offer.value}</span>
+                  <span className="offer-card__validity">{offer.validity}</span>
+                </div>
 
-              <button type="button" className="offer-card__button">
-                {offer.cta}
-              </button>
-            </div>
-          </article>
-
-        ))}
-
+                <button type="button" className="offer-card__button">
+                  {offer.cta}
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
